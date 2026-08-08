@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "azurerm" {
-    storage_account_name = "backendstorageaccountsrv"
+    storage_account_name = "backendstorgeaccountsrv"
     resource_group_name  = "Saurav_Backend_Storage--rg"
     container_name       = "landingzonelab1container"
     key                  = "dev/state_file"

@@ -25,5 +25,13 @@ module "Bastion" {
   depends_on = [module.Subnet, module.Public_IP]
   source     = "../Child_Modules/5_Bastion"
   c-bastion  = var.p-bastion
+  c-snet     = var.p-snet
+  c-pip      = var.p-pip
 }
 
+module "VM" {
+  depends_on = [module.Subnet]
+  source     = "../Child_Modules/6_NIC+Virtual_Machine"
+  c-vm       = var.p-vm
+  c-snet     = var.p-snet
+}

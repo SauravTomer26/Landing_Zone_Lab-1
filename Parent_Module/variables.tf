@@ -18,3 +18,7 @@ variable "p-bastion" {
   type = map(any)
 }
 
+variable "p-vm" {
+  type = map(any)
+}
+

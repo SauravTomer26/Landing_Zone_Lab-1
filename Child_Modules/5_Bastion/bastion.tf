@@ -1,16 +1,16 @@
 
 data "azurerm_subnet" "Subnet_data_block" {
-  for_each = var.c-bastion
+  for_each = var.c-snet
 
-  name                 = each.value.subnet_name
+  name                 = each.key
   virtual_network_name = each.value.vnet_name
   resource_group_name  = each.value.rg_name
 }
 
 data "azurerm_public_ip" "pip_data_block" {
-  for_each = var.c-bastion
+  for_each = var.c-pip
 
-  name                = each.value.pip_name
+  name                = each.key
   resource_group_name = each.value.rg_name
 }
 

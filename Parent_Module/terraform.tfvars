@@ -64,4 +64,32 @@ p-bastion = {
 }
 
 # ------------ NIC + Virtual Machine ------------
+p-vm = {
+  NIC-dev-frontend = {
+    nic_location     = "centralindia"
+    nic_rg_name      = "dev-rg"
+    ipconfig_name    = "internal"
+    subnet_name      = "Frontend-Subnet"
+    private_ip_alloc = "Dynamic"
+
+    vm_name      = "VM-dev"
+    vm_rg_name   = "dev-rg"
+    vm_location  = "centralindia"
+    vm_size      = "Standard_D4_v5"
+    vm_username  = "dev-user"
+    vm_password  = "password@123"
+    vm_pswd_auth = "false"
+
+    os_disk_caching              = "ReadWrite"
+    os_disk_storage_account_type = "Standard_LRS"
+    image_publisher              = "Canonical"
+    image_offer                  = "0001-com-ubuntu-server-jammy"
+    image_sku                    = "22_04-lts"
+    image_version                = "latest"
+  }
+
+
+}
+
+# ------------ NSG ------------
 
